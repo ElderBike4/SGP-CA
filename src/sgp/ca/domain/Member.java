@@ -12,8 +12,11 @@ public class Member {
     private String password;
     private String cellPhoneNumber;
     private String mail;
+    private int age;
+    private String profileProdep;
+    private String LGCA;
     
-    public Member(String name, String lastName, String motherLastName, String user, String password, String cellPhoneNumber, String mail){
+    public Member(String name, String lastName, String motherLastName, String user, String password, String cellPhoneNumber, String mail,int age,String profileProdep,String LGCA){
         this.name=name;
         this.lastName=lastName;
         this.motherLastName=motherLastName;
@@ -21,11 +24,18 @@ public class Member {
         this.password=password;
         this.cellPhoneNumber=cellPhoneNumber;
         this.mail=mail;
+        this.age=age;
+        this.profileProdep = profileProdep;
+        this.LGCA = LGCA;
+    }
+
+    public Member() {
+        
     }
     public void setName(String name){
         this.name=name;
     }
-    public void setLasName(String lastName){
+    public void setLastName(String lastName){
         this.lastName=lastName;
     }
     public void setMotherLastName(String motherLastName){
@@ -43,10 +53,19 @@ public class Member {
     public void setMail(String mail){
         this.mail=mail;
     }
+    public void setAge(int age){
+        this.age = age;
+    }
+    public void setProfileProdep(String profileProdep){
+        this.profileProdep = profileProdep;
+    }
+    public void setLGCA(String LGCA){
+        this.LGCA = LGCA;
+    }
     public String getName(){
         return name;
     }
-    public String getLasName(){
+    public String getLastName(){
         return lastName;
     }
     public String getMotherLastName(){
@@ -63,5 +82,14 @@ public class Member {
     }
     public String getMail(){
         return mail;
+    }
+    public int getAge(){
+        return age;
+    }
+    public String getProfileProdep(){
+        return profileProdep;
+    }
+    public String getLGCA(){
+        return LGCA;
     }
 }

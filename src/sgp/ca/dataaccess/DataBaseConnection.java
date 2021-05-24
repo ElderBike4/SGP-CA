@@ -3,6 +3,8 @@ package sgp.ca.dataaccess;
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,18 +23,18 @@ public class DataBaseConnection {
     }
   return connection;
 }
-    
-    public boolean connect(){
-        DataBaseConnection connectionDataBase = new DataBaseConnection();
-        boolean connect = false;
-        Connection connection = connectionDataBase.connection();
-        if(connection==null){
-            
-        }else{
-            connect = true;  
+    public void closeConnection(){
+        if(connection!= null){
+            try{
+                if(!connection.isClosed()){
+                    connection.close();
+                }
+            }catch(SQLException ex){
+                Logger.getLogger(DataBaseConnection.class.getName()).log(Level.SEVERE,null,ex);
+            }
         }
-        return connect;
-    }
+    }   
+ 
 
 }    
 

@@ -5,15 +5,14 @@
  */
 package sgp.ca.businesslogic;
 
-import java.util.ArrayList;
-import sgp.ca.domain.Event;
+import sgp.ca.domain.Collaborator;
 
 /**
  *
  * @author Esteban
  */
-public interface IEventDao {
-    public int registerEvent(Event eventAux);
-    public int editEvent(Event eventAux, String titleAux);
-    public ArrayList<Event> searchEvent(String title);
+public interface ICollaboratorDao {
+    public int Collaborator(Collaborator collaborator);
+    public Collaborator createCollaborator(String [] data);
+    public boolean verifyCollaborator(Collaborator collaborator);
 }
